@@ -208,9 +208,9 @@ const Result = ({day, month, year})=>{
   } else{
       return(
         <div className="result-text">
-      <p><span>{year == "" ? "--" : year}</span> years</p>
-      <p><span>{month == ""? "--" : month}</span> months</p>
-      <p><span>{day == "" ? "--" : day}</span> days</p>
+      <p><span>{year === "" ? "--" : year}</span> years</p>
+      <p><span>{month === ""? "--" : month}</span> months</p>
+      <p><span>{day === "" ? "--" : day}</span> days</p>
     </div>
         
       )}
