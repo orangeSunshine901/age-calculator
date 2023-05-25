@@ -1,0 +1,374 @@
+/*
+  # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Purple: hsl(259, 100%, 65%)
+- Light red: hsl(0, 100%, 67%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Off white: hsl(0, 0%, 94%)
+- Light grey: hsl(0, 0%, 86%)
+- Smokey grey: hsl(0, 1%, 44%)
+- Off black: hsl(0, 0%, 8%)
+
+## Typography
+
+### Body Copy
+
+- Font size (inputs): 32px
+
+### Font
+
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400i, 700, 800i
+*/
+
+:root{
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--Off-white);
+}
+
+
+.calculator-wrapper{
+    display: flex;
+    height: 97vh;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    padding-inline: 1rem;
+  }
+
+  .calculator-body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 590px;
+    height: 63%;
+    background-color: white;
+    border-radius: 1rem 1rem 30% 1.5rem;
+    background-color: var(--White);
+    padding: 1rem;
+    padding-inline: 2.5rem;
+    padding-top: 3rem;
+    justify-content: start;
+  }
+
+  .calculator-body form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    height: auto;
+  }
+
+  .label-wrapper{
+    display: flex;
+    justify-content: start;
+    column-gap: 0rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .field-label {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1rem;
+    color: var(--Smokey-grey);
+    height: 100%;
+    padding-bottom: 0rem;
+    width: 25%;
+  }
+
+  .error-label{
+    color: var(--Light-red);
+  }
+
+  .input-field{
+    margin-top: 0.4rem;
+    display: block;
+    width: 80%;
+    height: 65px;
+    border-radius: 7px;
+    border: 1px solid var(--Light-grey);
+    padding-left: 10%;
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  .input-field:focus{
+    border: 1px solid var(--Purple);
+    outline: none;
+    caret-color: var(--Purple);
+  }
+
+  .error-field{
+    border: 1px solid var(--Light-red);
+  }
+
+
+  .error-message {
+    position: realtive;
+    color: var(--Light-red);
+    font-weight: 400;
+    font-size: 11px; 
+    text-transform: none;
+    letter-spacing: 0;
+    font-style: italic;
+    padding-left: 1px;
+    padding-top: 0.2rem;
+    height: 5px;
+  }
+
+  .button-section{
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  form button{
+    display: block;
+    border: none;
+    float: right;
+    background-color: var(--Purple);
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 20;
+    padding-top: 3px;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  form button svg{
+    width: 47%;
+    height: 47%;
+  }
+
+  form button:hover{
+    background-color: black;
+  }
+
+  .button-section::before{
+    display: none;
+  }
+  .button-section::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 560px;
+    right: 2rem;
+    height: 1.5px;
+    top: 35px;
+    background-color: var(--Light-grey);
+    z-index: 0;
+  }
+
+  .result-text{
+    width: 100%;
+    padding-top: 0;
+    font-size: 80px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 95px;
+    height: 190px;
+  }
+
+  .result-text p span{
+    color: var(--Purple);
+  }
+
+@media screen and (max-width: 800px){
+  .calculator-wrapper{
+    display: flex;
+    height: 97vh;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    padding-inline: 1rem;
+  }
+
+  .calculator-body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 60%;
+    background-color: white;
+    border-radius: 1.5rem 1.5rem 4.5rem 1.5rem;
+    background-color: var(--White);
+    padding: 1rem;
+    padding-inline: 1.5rem;
+    justify-content: space-around;
+  }
+
+  .calculator-body form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+
+  .label-wrapper{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2rem;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+
+  .field-label {
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1rem;
+    color: var(--Smokey-grey);
+    height: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .error-label{
+    color: var(--Light-red);
+  }
+
+  .input-field{
+    margin-top: 0.4rem;
+    display: block;
+    width: 90%;
+    height: 50px;
+    border-radius: 7px;
+    border: 1px solid var(--Light-grey);
+    padding-left: 10%;
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .input-field:focus{
+    border: 1px solid var(--Purple);
+    outline: none;
+    caret-color: var(--Purple);
+  }
+
+  .error-field{
+    border: 1px solid var(--Light-red);
+  }
+
+
+  .error-message {
+    position: realtive;
+    color: var(--Light-red);
+    font-weight: 400;
+    font-size: 8px; 
+    text-transform: none;
+    letter-spacing: 0;
+    font-style: italic;
+    padding-left: 1px;
+    padding-top: 0.2rem;
+    height: 5px;
+  }
+
+  .button-section{
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  form button{
+    display: block;
+    float: none;
+    border: none;
+    margin: auto;
+    background-color: var(--Purple);
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 20;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+  
+  form button svg{
+    width: 40%;
+    height: 40%;
+  }
+
+  form button:hover{
+    background-color: black;
+  }
+
+  .button-section::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 140px;
+    height: 1.5px;
+    left: 0;
+    top: 35px;
+    background-color: var(--Light-grey);
+    z-index: 0;
+  }
+  .button-section::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 140px;
+    right: 0;
+    height: 1.5px;
+    top: 35px;
+    background-color: var(--Light-grey);
+    z-index: 0;
+  }
+
+  .result-text{
+    width: 100%;
+    padding-top: 2rem;
+    font-size: 50px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 55px;
+    height: 150px;
+  }
+
+  .result-text p span{
+    color: var(--Purple);
+  }
+}
